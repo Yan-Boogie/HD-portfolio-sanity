@@ -1,4 +1,5 @@
-import {defineArrayMember, defineType} from 'sanity'
+// @ts-check
+import { defineArrayMember, defineType } from 'sanity'
 
 /**
  * This is the schema definition for the rich text fields used for
@@ -28,9 +29,7 @@ export default defineType({
         {title: 'H2', value: 'h2'},
         {title: 'H3', value: 'h3'},
         {title: 'H4', value: 'h4'},
-        {title: 'Quote', value: 'blockquote'},
       ],
-      lists: [{title: 'Bullet', value: 'bullet'}],
       // Marks let you mark up inline text in the block editor.
       marks: {
         // Decorators usually describe a single property – e.g. a typographic
@@ -62,6 +61,9 @@ export default defineType({
     defineArrayMember({
       type: 'image',
       options: {hotspot: true},
+    }),
+    defineArrayMember({
+      type: 'video',
     }),
   ],
 })
