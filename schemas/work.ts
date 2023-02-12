@@ -16,7 +16,7 @@ export default defineType({
         defineField({
             name: 'description',
             title: 'Description',
-            type: 'string',
+            type: 'text',
         }),
         defineField({
             name: 'workType',
@@ -26,6 +26,20 @@ export default defineType({
                 list: [
                     { title: 'Motion', value: 'motion' },
                     { title: 'Illustration', value: 'illustration' },
+                ],
+                layout: 'radio',
+            },
+        }),
+        defineField({
+            name: 'section',
+            title: 'Place Section',
+            type: 'string',
+            description: 'Choose the section to place the work. Choose `None` if it is an Illustration work',
+            options: {
+                list: [
+                    { title: 'Carousel', value: 'carousel' },
+                    { title: 'List', value: 'list' },
+                    { title: 'None', value: 'none' },
                 ],
                 layout: 'radio',
             },
